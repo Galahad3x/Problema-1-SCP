@@ -1,0 +1,33 @@
+M1;
+signal(SIGUSR1, SIG_IGN);
+if((int pid1 = fork()) == 0){
+	M3;
+	kill(getppid(),SIGUSR1);
+	M8;
+	exit(0);
+}
+M2;
+if((int pid5 = fork()) == 0){
+	M4;
+}
+pause();
+if((int pid2 = fork()) == 0){
+	M5;
+}
+if((int pid3 = fork()) == 0){
+	M6;
+}
+if((int pid4 = fork()) == 0){
+	M7;
+}
+if((int pid6 = fork()) == 0){
+	wait(pid1);
+	wait(pid4);
+	M9;
+}
+wait(pid2);
+wait(pid5);
+M10;
+wait(pid6);
+wait(pid3);
+M11;

@@ -1,0 +1,43 @@
+int num = 3, num_2 = 2, num_3 = 2, num_dummy = 7;
+
+	M1;
+	fork Rama1;
+	M2;
+DummySinc1:
+	join num_dummy;
+	fork Rama2;
+	fork Rama3;
+	fork Rama4;
+	M4;
+Sinc2:
+	join num_2;
+	M10;
+Sinc1:
+	join num;
+	M11;
+	exit;
+
+Rama1:
+	M3;
+	fork Dummy1;
+	M8;
+Sinc3:
+	join num_3;
+	M9;
+	goto Sinc1;
+
+Rama2:
+	M5;
+	goto Sinc2;
+
+Rama3:
+	M6;
+	goto Sinc1;
+
+Rama4:
+	M7;
+	goto Sinc3;
+
+Dummy1:
+	goto DummySinc1;
+	

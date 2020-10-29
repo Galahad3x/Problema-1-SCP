@@ -1,0 +1,19 @@
+Begin:
+	M1;
+	Cobegin:
+		M2;
+		M3;
+		Cobegin:
+			M4;
+			M5;
+			M6;
+			M7;
+			M8;
+		Coend;
+		Cobegin:
+			M9;
+			M10;
+		Coend;
+	Coend;
+	M11;
+End;
