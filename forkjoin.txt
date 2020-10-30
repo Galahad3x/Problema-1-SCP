@@ -1,4 +1,4 @@
-int num = 3, num_2 = 2, num_3 = 2, num_dummy = 2;
+int num = 3, num_2 = 2, num_3 = 2, num_dummy = 7;
 
 	M1;
 	fork Rama1;
